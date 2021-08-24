@@ -1,0 +1,78 @@
+name: leo_ife
+description: A new Flutter application.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.0
+  carousel_slider: ^3.0.0
+  carousel_pro: ^1.0.0
+  flutter_svg: ^0.20.0-nullsafety.3
+  provider: ^6.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/images/soaps/
+    - assets/images/liquids/
+    - assets/images/brooms/
+    - assets/images/freshners/
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: fonts/NotoSansJP-Black.otf
+        - asset: fonts/NotoSansJP-Bold.otf
+        - asset: fonts/NotoSansJP-Light.otf
+        - asset: fonts/NotoSansJP-Medium.otf
+        - asset: fonts/NotoSansJP-Regular.otf
+        - asset: fonts/NotoSansJP-Thin.otf
+    - family: Coalition
+      fonts:
+        - asset: fonts/Coalition.ttf
+    - family: Viaoda
+      fonts:
+        - asset: fonts/ViaodaLibre-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Light.ttf
+        - asset: fonts/Montserrat-Black.ttf
+        - asset: fonts/Montserrat-BlackItalic.ttf
+        - asset: fonts/Montserrat-Bold.otf
+        - asset: fonts/Montserrat-BoldItalic.ttf
+        - asset: fonts/Montserrat-ExtraBold.ttf
+        - asset: fonts/Montserrat-ExtraBoldItalic.ttf
+        - asset: fonts/Montserrat-ExtraLight.ttf
+        - asset: fonts/Montserrat-ExtraLightItalic.ttf
+        - asset: fonts/Montserrat-Italic.ttf
+        - asset: fonts/Montserrat-LightItalic.ttf
+        - asset: fonts/Montserrat-Medium.ttf
+        - asset: fonts/Montserrat-MediumItalic.ttf
+        - asset: fonts/Montserrat-Regular.otf
+        - asset: fonts/Montserrat-SemiBold.ttf
+        - asset: fonts/Montserrat-SemiBoldItalic.ttf
+        - asset: fonts/Montserrat-Thin.ttf
+        - asset: fonts/Montserrat-ThinItalic.ttf
+
+
+
+
+
+
