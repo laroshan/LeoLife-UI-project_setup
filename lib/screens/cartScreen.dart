@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 
 
 class CartScreen extends StatefulWidget {
-static String cartId= "/cart_screen";
+static String screenId= "/cart_screen";
 
   @override
   _CartScreenState createState() => _CartScreenState();

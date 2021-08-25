@@ -13,7 +13,7 @@ class PlainIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(icon: Icon(icon,size: 33,color: Colors.blueGrey[300]),
       onPressed: (){
-        Navigator.pushNamed(context, route??HomeScreen.homeId);
+        Navigator.pushNamed(context, route??HomeScreen.screenId);
       },);
   }
 }

@@ -17,7 +17,7 @@ RoundedTextBtn({@required this.text, @required this.function, this.isSelected,th
     return Padding(
       padding: EdgeInsets.all(1),
       child: Container(
-        width: getProportionateScreenWidth(75.0),
+        width: getProportionateScreenWidth(50.0),
         decoration: BoxDecoration(
             color: Colors.greenAccent[500],
             border: Border.all(color: index==isSelected ?Colors.deepOrange[200]: Colors.transparent,

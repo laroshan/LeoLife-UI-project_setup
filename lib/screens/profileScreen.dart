@@ -10,7 +10,7 @@ import 'home-screen.dart';
 
 
 class ProfileScreen extends StatelessWidget {
-  static String profileScreenId = "profile_screen";
+  static String screenId = "profile_screen";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
             color: black,
           ),
           onPressed: (){
-            Navigator.pushReplacementNamed(context, HomeScreen.homeId);
+            Navigator.pushReplacementNamed(context, HomeScreen.screenId);
           },
         ),
         elevation: 0,
@@ -46,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/profilePic1.jpg"),
+                      backgroundImage: AssetImage("assets/images/pexels.jpeg"),
                       radius: 60,
                     ),
                     Positioned(

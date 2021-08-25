@@ -34,7 +34,7 @@ class Featured_Product extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(
-                            context, ProductDetailScreen.productScreenId,
+                            context, ProductDetailScreen.screenId,
                             arguments: index);
 
                       },

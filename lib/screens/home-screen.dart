@@ -20,7 +20,7 @@ import 'cartScreen.dart';
 
 class HomeScreen extends StatefulWidget {
 
- static String homeId="home_screen";
+ static String screenId="home_screen";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 icon: Icons.add_shopping_cart,
                                 color: Colors.grey[50],
                                 function: (){
-                                  Navigator.pushNamed(context, CartScreen.cartId);
+                                  Navigator.pushNamed(context, CartScreen.screenId);
                                 },
                               ),
                             ),
@@ -231,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icons.add_shopping_cart,
                           color: Colors.grey[50],
                           function: (){
-                            Navigator.pushNamed(context, CartScreen.cartId);
+                            Navigator.pushNamed(context, CartScreen.screenId);
                           },
                         ),
                         SizedBox(

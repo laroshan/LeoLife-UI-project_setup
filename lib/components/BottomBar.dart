@@ -28,10 +28,10 @@ class BottomBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            PlainIconButton(icon: Icons.home,route: HomeScreen.homeId,),
-            PlainIconButton(icon: Icons.category,route: HomeScreen.homeId,),
-            PlainIconButton(icon: Icons.add_shopping_cart,route: CartScreen.cartId,),
-            PlainIconButton(icon: Icons.person,route: ProfileScreen.profileScreenId,),
+            PlainIconButton(icon: Icons.home,route: HomeScreen.screenId,),
+            PlainIconButton(icon: Icons.category,route: HomeScreen.screenId,),
+            PlainIconButton(icon: Icons.add_shopping_cart,route: CartScreen.screenId,),
+            PlainIconButton(icon: Icons.person,route: ProfileScreen.screenId,),
 
 
 

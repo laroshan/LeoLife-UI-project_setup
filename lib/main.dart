@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:leo_ife/screens/ProductDetailScreen.dart';
+import 'package:leo_ife/screens/aboutUs.dart';
 import 'package:leo_ife/screens/cartScreen.dart';
+import 'package:leo_ife/screens/helpScreen.dart';
 import 'package:leo_ife/screens/home-screen.dart';
 import 'package:leo_ife/screens/landingScreen.dart';
 import 'package:leo_ife/screens/openingScreen.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
 
         debugShowCheckedModeBanner: false,
         title: 'LD Leo Life',
-  initialRoute: OpeningScreen.id,
+  initialRoute: OpeningScreen.screenId,
         theme: ThemeData(
           primarySwatch: Colors.red,
           fontFamily: 'Montserrat'
@@ -35,14 +37,16 @@ class MyApp extends StatelessWidget {
 
 
       routes: {
-          HomeScreen.homeId:(context)=>HomeScreen(),
-        ProductDetailScreen.productScreenId:(context)=> ProductDetailScreen(),
-        ProfileScreen.profileScreenId:(context)=> ProfileScreen(),
-        CartScreen.cartId:(context)=> CartScreen(),
+          HomeScreen.screenId:(context)=>HomeScreen(),
+        ProductDetailScreen.screenId:(context)=> ProductDetailScreen(),
+        ProfileScreen.screenId:(context)=> ProfileScreen(),
+        CartScreen.screenId:(context)=> CartScreen(),
         SignInScreen.screenId: (context)=> SignInScreen(),
         SignUpScreen.screenId: (context)=> SignUpScreen(),
         LandingScreen.screenId: (context)=>LandingScreen(),
-        OpeningScreen.id:(context)=>OpeningScreen()
+        OpeningScreen.screenId:(context)=>OpeningScreen(),
+        AboutusScreen.screenId:(context)=>AboutusScreen(),
+        HelpScreen.screenId:(context)=>HelpScreen()
       },
 
 

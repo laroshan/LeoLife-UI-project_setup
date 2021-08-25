@@ -75,7 +75,7 @@ onPressed: ()=>{
                   boxColor: Colors.deepOrange[400],
                   textColor: white,
                   function: (){
-                    Navigator.pushReplacementNamed(context, HomeScreen.homeId);
+                    Navigator.pushReplacementNamed(context, HomeScreen.screenId);
                   },
                 ),
                 SizedBox(
@@ -174,7 +174,7 @@ onPressed: ()=>{
                     boxColor: Colors.deepOrange[400],
                     textColor: white,
                     function: (){
-                      Navigator.pushReplacementNamed(context, HomeScreen.homeId);
+                      Navigator.pushReplacementNamed(context, HomeScreen.screenId);
                     },
                   ),
                   SizedBox(
@@ -255,7 +255,7 @@ onPressed: ()=>{
                     boxColor: Colors.deepOrange[400],
                     textColor: white,
                     function: (){
-                      Navigator.pushReplacementNamed(context, HomeScreen.homeId);
+                      Navigator.pushReplacementNamed(context, HomeScreen.screenId);
                     },
                   ),
                   SizedBox(

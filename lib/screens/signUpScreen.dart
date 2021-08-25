@@ -100,7 +100,7 @@ class SignUpScreen extends StatelessWidget {
                       BoxedTextBtn(
                         text: "Sign Up",
                         function: ()=>{
-                          Navigator.pushReplacementNamed(context, HomeScreen.homeId)
+                          Navigator.pushReplacementNamed(context, HomeScreen.screenId)
                         },
                         textColor: white,
                         boxColor: Colors.deepOrange[600],
@@ -234,7 +234,7 @@ class SignUpScreen extends StatelessWidget {
                   BoxedTextBtn(
                     text: "Sign Up",
                     function: ()=>{
-                      Navigator.pushReplacementNamed(context, HomeScreen.homeId)
+                      Navigator.pushReplacementNamed(context, HomeScreen.screenId)
                     },
                     textColor: white,
                     boxColor: Colors.deepOrange[600],
@@ -355,7 +355,7 @@ class SignUpScreen extends StatelessWidget {
                 BoxedTextBtn(
                   text: "Sign Up",
                   function: ()=>{
-                    Navigator.pushReplacementNamed(context, HomeScreen.homeId)
+                    Navigator.pushReplacementNamed(context, HomeScreen.screenId)
                   },
                   textColor: white,
                   boxColor: Colors.deepOrange[600],
