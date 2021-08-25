@@ -10,8 +10,9 @@ import 'package:provider/provider.dart';
 import '../../widgets/CustomTitleText.dart';
 class CarouselImageViewer extends StatelessWidget {
         final List<String> images;
+        final int index;
 
-        CarouselImageViewer({this.images});
+        CarouselImageViewer({this.images,this.index});
 
         @override
   Widget build(BuildContext context) {
@@ -105,7 +106,7 @@ class CarouselImageViewer extends StatelessWidget {
                         ]),
                     child: IconButton(
                       icon: Icon(
-                        Icons.favorite,
+                        store.productList[index].wishList?Icons.favorite:Icons.favorite_border_outlined,
                         color: red,
                         size: 18,
                       ),

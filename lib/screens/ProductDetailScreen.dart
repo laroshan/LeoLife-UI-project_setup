@@ -6,7 +6,6 @@ import 'package:leo_ife/components/ProductDetailScreen/ProductDetailPrice.dart';
 import 'package:leo_ife/constants/constants.dart';
 import 'package:leo_ife/constants/size_config.dart';
 import 'package:leo_ife/data/MyStore.dart';
-import 'package:leo_ife/models/Products.dart';
 import 'package:leo_ife/models/cartProduct.dart';
 import 'package:leo_ife/widgets/BoxedTextBtn.dart';
 import 'package:leo_ife/widgets/CustomTitleText.dart';
@@ -19,10 +18,13 @@ import 'package:provider/provider.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   static String productScreenId = "product_screen";
-  final Product product;
+
+  final int indexp;
 
 
-  ProductDetailScreen({this.product});
+  ProductDetailScreen({
+  this.indexp
+});
 
   @override
   _ProductDetailScreenState createState() => _ProductDetailScreenState();
@@ -30,29 +32,31 @@ class ProductDetailScreen extends StatefulWidget {
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   int count=1;
-  bool isTap=false;
+  int isIndex=0;
   @override
 
   @override
   Widget build(BuildContext context) {
-    final Product args = ModalRoute.of(context).settings.arguments;
+   // final Product args = ModalRoute.of(context).settings.arguments;
+    final int indexp=ModalRoute.of(context).settings.arguments;
 
-
+var store=Provider.of<MyStore>(context,listen: false);
       return SafeArea(
       child: Scaffold(
         backgroundColor: white,
         body: ListView(
           children: <Widget>[
             CarouselImageViewer(
-              images: args.images,
+              images: store.productList[indexp].images,
+              index: indexp,
             ),
             SizedBox(
               height: getProportionateScreenHeight(10.0),
             ),
             ProductTitlePrice(
-              price: args.price,
-              product: args.name,
-              company: args.company,
+              price: store.productList[indexp].price,
+              product: store.productList[indexp].name,
+              company: store.productList[indexp].company,
             ),
             RoundedBorderContainer(
               color: Colors.grey[100],
@@ -76,7 +80,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       child: Container(
                         height: getProportionateScreenHeight(160.0),
                         child: CustomTitle(
-                          text: args.description ?? "",
+                          text: store.productList[indexp].description ?? "",
                           color: black,
                           size: 16,
                           fontWeight: FontWeight.w300,
@@ -84,29 +88,32 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       ),
                     ),
 
-                    RoundedBorderContainer(
-                      color: Colors.grey[100],
-                      widget: Padding(
-                        padding: EdgeInsets.only(left: 5,right: 5,top: 3,bottom: 3),
-                        child: Container(
-                          height:getProportionateScreenHeight(80.0),
-                         // width: getProportionateScreenHeight(80.0),
-                          child: ListView.builder(itemBuilder: (context,index){
-                            return Padding(
-                              padding: EdgeInsets.only(right: 8,left: 8,top: 2,bottom: 2),
-                              child: RoundedTextBtn(
-                                function: (){
-                               setState(() {
-                                 isTap=!isTap;
-                               });
-                                },
-                                text: args.quantities[index],
-                                isSelected: isTap,
-                              ),
-                            );
-                          },
-                          itemCount: args.quantities.length,
-                          scrollDirection: Axis.horizontal,),
+                    Center(
+                      child: RoundedBorderContainer(
+                        color: Colors.grey[100],
+                        widget: Padding(
+                          padding: EdgeInsets.only(left: 5,right: 5,top: 3,bottom: 3),
+                          child: Container(
+                            height:getProportionateScreenHeight(80.0),
+                           // width: getProportionateScreenHeight(80.0),
+                            child: ListView.builder(itemBuilder: (context,index){
+                              return Padding(
+                                padding: EdgeInsets.only(right: 8,left: 8,top: 2,bottom: 2),
+                                child: RoundedTextBtn(
+                                  function: (){
+                                 setState(() {
+                                   isIndex=index;
+                                 });
+                                  },
+                                  text:store.productList[indexp].quantities[index],
+                                  isSelected: isIndex,
+                                  index: index,
+                                ),
+                              );
+                            },
+                            itemCount: store.productList[indexp].quantities.length,
+                            scrollDirection: Axis.horizontal,),
+                          ),
                         ),
                       ),
                     ),
@@ -173,15 +180,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                 try{
                                   CartProduct c=new CartProduct(
                                       count: count,
-                                      company: args.company,
-                                  images: args.images,
-                                    name: args.name,
-                                    price: args.price,
-                                    quantity: args.quantities[0]
+                                      company: store.productList[indexp].company,
+                                  images: store.productList[indexp].images,
+                                    name: store.productList[indexp].name,
+                                    price: store.productList[indexp].price,
+                                    quantity: store.productList[indexp].quantities[isIndex]
 
                                   );
-                            Provider.of<MyStore>(context,listen: false).addCart(c);
-                                  Provider.of<MyStore>(context,listen: false).addCartTotal((args.price*count).toDouble());
+                                  store.addCart(c);
+                                  store.addCartTotal((store.productList[indexp].price*count).toDouble());
 
                             }
                                 catch(e)

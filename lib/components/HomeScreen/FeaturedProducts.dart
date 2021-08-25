@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:leo_ife/constants/constants.dart';
 import 'package:leo_ife/constants/size_config.dart';
 import 'package:leo_ife/data/MyStore.dart';
-import 'package:leo_ife/data/ProductList.dart';
 import 'package:leo_ife/screens/ProductDetailScreen.dart';
 import 'package:provider/provider.dart';
 import '../../widgets/CustomTitleText.dart';
@@ -36,7 +35,7 @@ class Featured_Product extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(
                             context, ProductDetailScreen.productScreenId,
-                            arguments: productList[index]);
+                            arguments: index);
 
                       },
                       child: (Container(

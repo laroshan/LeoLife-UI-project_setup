@@ -9,7 +9,7 @@ import 'package:leo_ife/data/CartList.dart' as cartData;
 import 'package:leo_ife/models/Products.dart';
 import 'package:leo_ife/models/cartProduct.dart';
 
-
+//Provider Class
 class MyStore extends ChangeNotifier{
 
   List<Product> _productList=productData.productList;
